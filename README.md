@@ -50,8 +50,8 @@ Things you may want to cover:
 |------|----|-------|
 |content|text||
 |image|text||
-|user_id|text||
-|group_id|text||
+|user_id|integer||
+|group_id|integer||
 
 ### Association
 - belongs_to :user
