@@ -23,37 +23,40 @@ Things you may want to cover:
 
 * ...
 
-## groupesテーブル
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|text|unique: true, null: false|
+
+### Association
+- has_many :users, through: :members
+- has_many :members
+- has_many :messages
+
+
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|text|index: true, unique: true, null: false|
 
 ### Association
-- has_many users
-- has_many messages
-
-
-## membersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|text|index: true, unique: true, null: false|
-
-### Association
-- has_many messages
-- has_many groupes
+- has_many :groups, through: :members
+- has_many :members
+- has_many :messages
 
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|text|foreign_key: true,null: false|
+|content|text|null: false|
+|image|text||
 
 ### Association
-- belongs_to user
-- belongs_to group
+- belongs_to :user
+- belongs_to :group
 
 
-## group_memberテーブル
+## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
