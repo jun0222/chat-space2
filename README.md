@@ -49,7 +49,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |content|text||
-|image|image||
+|image|text||
 |user_id|text||
 |group_id|text||
 
