@@ -29,8 +29,8 @@ Things you may want to cover:
 |name|text|index: true, unique: true, null: false|
 
 ### Association
-has_many users
-has_many messages
+- has_many users
+- has_many messages
 
 
 ## membersテーブル
@@ -39,8 +39,8 @@ has_many messages
 |name|text|index: true, unique: true, null: false|
 
 ### Association
-has_many messages
-has_many groupes
+- has_many messages
+- has_many groupes
 
 
 ## messagesテーブル
@@ -49,8 +49,8 @@ has_many groupes
 |content|text|foreign_key: true,null: false|
 
 ### Association
-belongs_to user
-belongs_to group
+- belongs_to user
+- belongs_to group
 
 
 ## group_memberテーブル
@@ -60,5 +60,5 @@ belongs_to group
 |group_id|integer|foreign_key: true|
 
 ### Association
-belongs_to :user
-belongs_to :group
+- belongs_to :user
+- belongs_to :group
