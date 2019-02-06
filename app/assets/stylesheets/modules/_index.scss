@@ -4,78 +4,104 @@
 
 .caution {
   background-color: $AlertColor;
+  width: 100vw;
   text-align: center;
 }
 
 .sidebar-top {
+  height: 100px;
+  width: 300px;
   background-color: $SidebarTopColor;
   color: $SidebarFontColor;
-  font-size: 16px;
-  height: 15vh;
-  padding-top: 6vh;
-  .glyphicon-edit{
-    margin-left: 8vw;
-  }
+  float: left;
 }
 
-.sidebar-main {
-  background-color: $SidebarMainColor;
-  color: $SidebarFontColor;
-  font-size: 16px;
-  height: 90vh;
-  .group {
-    font-size: 15px;
-  }
-  .new {
-    font-size: 11px;
-  }
+.sidebar-top-content {
+  padding: 40px 20px 40px 20px;
+}
+
+.sidebar-top-content .user-name {
+  float: left;
+}
+
+.sidebar-top-content span {
+  float: right;
+  margin-left: 5px;
 }
 
 .header {
-  height: 15vh;
+  height: 100px;
+  width: calc(100vw - 300px);
+  float: right;
+  padding: 35px 35px 0 35px;
   border-bottom: solid 1px $BorderColor;
-  border-right: solid 1px $BorderColor;
-  .member {
-    margin-top: 2vh;
-    margin-left: 2vw;
-  }
-  .group {
-    margin-top: 4vh;
-    margin-left: 2vw;
-  }
-  .edit-button {
+}
+
+.header .edit-button {
   position: absolute;
-  top: 4vh;
-  right: 5vw;
+  top: 50px;
+  right: 45px;
+  width: 73px;
+  height: 43px;
+  color: $AlertColor;
+  background: white;
+  border: $AlertColor solid 1px;
+  font-size: 20px;
   }
+
+  .header .group-name{
+    font-size: 20px;
+  }
+  .header .members {
+    margin-top: 15px;
+    color: gray;
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+.clear {
+  clear: both;
+}
+
+.sidebar-main {
+  height: calc(100vh - 100px);
+  width: 300px;
+  background-color: $SidebarMainColor;
+  color: $SidebarFontColor;
+  float: left;
+  padding: 20px;
 }
 
 .main {
-  height: 80vh;
+  height: calc(100vh - 200px);
+  width:  calc(100vw - 300px);
+  float: right;
+}
+
+.content {
   overflow: scroll;
-  border-right: solid 1px $BorderColor;
+  height: calc(100vh - 200px);
+  width:  calc(100vw - 300px);
 }
 
-.footer-contentlg {
-  margin-top: -9.6vh;
+.footer {
+  height: 100px;
+  width:  calc(100vw - 300px);
   background-color: gray;
-  padding-top: 2vh;
+  margin: -100px 0 0 300px;
+  padding: 20px;
 }
 
-.footer-contentmd {
-  margin-top: -9.6vh;
-  background-color: gray;
-  padding-top: 2vh;
+.footer-input {
+  height: 50px;
+  width: calc(100% - 100px);
 }
 
-.footer-contentsm {
-  margin-top: -9.6vh;
-  background-color: gray;
-  padding-top: 2vh;
-}
-
-.footer-contentxs {
-  margin-top: -9.6vh;
-  background-color: gray;
-  padding-top: 2vh;
+.footer-button {
+  width: 90px;
+  height: 55px;
+  color: white;
+  background: $AlertColor;
+  border: $AlertColor solid 1px;
+  font-size: 20px
 }
