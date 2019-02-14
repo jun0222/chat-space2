@@ -1,8 +1,10 @@
 $(function(){
   function buildHTML(message){
     var html = `<div class="message">
-                    <a class="upper-message__user-name">${ message.name}</a><a class="upper-message__date">${message.time}</a>\n
+                    <a class="upper-message__user-name">${ message.name}</a>
+                    <a class="upper-message__date">${message.time}</a>\n
                     <p>${message.content}</p>
+                    <img src="${message.image.url}" class="lower-message__image">
                 </div>`
     return html;
   }
@@ -11,21 +13,21 @@ $(function(){
     var formData = new FormData(this);
     var href = window.location.href
     $.ajax({
-      url: href,
       type: "POST",
+      url: href,
       data: formData,
       dataType: 'json',
+      contentType: false,
       processData: false,
-      contentType: false
+      disabled: false
     })
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.hidden').val('')
-      $('.form__message').val('');
+      $('#new_message')[0].reset();
       $('.main').animate({
         scrollTop: $('.messages')[0].scrollHeight
-      });
+      })
     })
     .fail(function(){
       alert('メッセージを入力してください');
