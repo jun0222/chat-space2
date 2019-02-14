@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.create(message_params)
     respond_to do |format|
-      format.html { redirect_to :action => "index" }
+      format.html { redirect_to action: "index" }
       format.json
     end
   end
