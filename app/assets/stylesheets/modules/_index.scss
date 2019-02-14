@@ -2,10 +2,8 @@
   box-sizing: border-box;
 }
 
-.caution {
-  background-color: $AlertColor;
-  width: 100vw;
-  text-align: center;
+.hidden {
+  display:none
 }
 
 .sidebar-top {
@@ -14,20 +12,17 @@
   background-color: $SidebarTopColor;
   color: $SidebarFontColor;
   float: left;
-}
-
-.sidebar-top-content {
+  .sidebar-top-content {
   padding: 40px 20px 40px 20px;
-}
-
-.sidebar-top-content .user-name {
+    .user-name {
   float: left;
-}
-
-.icon {
+    }
+  .icon {
   float: right;
   margin-left: 5px;
   color: white;
+  }
+  }
 }
 
 .header {
@@ -36,9 +31,13 @@
   float: right;
   padding: 35px 35px 0 35px;
   border-bottom: solid 1px $BorderColor;
+  .group-name{
+  font-size: 20px;
+  }
 }
 
-.header .edit-button {
+.header {
+  .edit-button {
   position: absolute;
   top: 30px;
   right: 45px;
@@ -49,13 +48,11 @@
   border: $AlertColor solid 1px;
   font-size: 20px;
   }
+}
 
-  .header .group-name{
-    font-size: 20px;
-  }
   .header .members {
     margin-top: 15px;
-    color: gray;
+    color: #848484;
     font-size: 12px;
     font-weight: normal;
   }
@@ -65,12 +62,13 @@
 }
 
 .sidebar-main {
-  height: calc(100vh - 100px);
-  width: 300px;
   background-color: $SidebarMainColor;
   color: $SidebarFontColor;
   float: left;
   padding: 20px;
+  overflow: scroll;
+  height: calc(100vh - 100px);
+  width:  300px;
 }
 
 .main {
@@ -89,7 +87,7 @@
 .footer {
   height: 100px;
   width:  calc(100vw - 300px);
-  background-color: gray;
+  background-color: #D8D8D8;
   margin: -100px 0 0 300px;
   padding: 20px;
 }
