@@ -1,0 +1,7 @@
+= form_tag( '/groups/new', method: :get ) do
+  %input{:name => "keyword", :size => "80", :class => "search__query"}
+%ul
+  - @users.each do |user|
+    %li{:class => "listview js-lazy-load-images"}
+      %span
+        - user.name

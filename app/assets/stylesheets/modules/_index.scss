@@ -143,3 +143,27 @@
   border: $AlertColor solid 1px;
   font-size: 20px;
 }
+
+.user-delete-line, .user-add-line {
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 14px;
+}
+
+.user-add-line {
+  border-bottom: 1px solid #ddd;
+}
+
+.user-search-remove, .user-search-add {
+  float: right;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.user-search-add {
+  color: skyblue;
+}
+
+.user-search-remove {
+  color: red;
+}
