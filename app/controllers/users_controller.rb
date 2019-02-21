@@ -1,6 +1,19 @@
 class UsersController < ApplicationController
 
+  def index
+  end
+
   def edit
+  end
+
+  def search
+    @search = Group.new
+    @search.users << current_user
+    @users = User.where("name LIKE(?)", "%#{params[:keyword]}%").where.not(id: params[:user_ids]).where.not(id: current_user.id )
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def update

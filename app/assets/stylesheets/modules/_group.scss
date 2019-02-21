@@ -81,7 +81,6 @@
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
-    border-bottom: 1px solid #ddd;
     &:after {
       content: "";
       clear: both;
@@ -114,4 +113,25 @@
     background-color: #38aef0;
     border: 0;
   }
+}
+
+li {
+  list-style: none;
+}
+
+.already-exist-chat-member {
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-delete-line {
+border-bottom: 1px solid #ddd;
+}
+
+.nouser_alert {
+  border-bottom: 1px solid #ddd;
+  line-height: 50px;
+  padding: 0 15px;
 }

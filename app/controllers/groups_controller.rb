@@ -3,8 +3,6 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
-    @group.users << current_user
   end
 
   def create
@@ -33,3 +31,5 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 end
+
+
