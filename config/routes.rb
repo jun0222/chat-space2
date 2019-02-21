@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'groups#index'
-  get '/users/search', to: 'users#search'
-  resources :users, only: [:index, :edit, :update]
+  resources :users, only: [:index, :edit, :update, :search] do
+    collection do
+      get '/users/search'
+    end
+  end
   resources :groups, only: [:new, :create, :edit, :update] do
     resources :messages, only: [:index, :create]
   end

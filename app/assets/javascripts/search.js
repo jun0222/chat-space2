@@ -51,7 +51,7 @@ function userN_delete(name, id) {
 
     $.ajax({
       type: 'GET',
-      url: '/users/search',
+      url: '/users/users/search',
       data: { keyword: input,
               user_ids: selected_user
             },
