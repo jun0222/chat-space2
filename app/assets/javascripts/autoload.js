@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log(message);
     if (message.image.url !== null) {
       var html = `<div class="message" data-id="${ message.id }">
                       <a class="upper-message__user-name">${ message.name}</a>
@@ -18,30 +17,32 @@ $(function(){
     return html;
   }
 
-  $('#new_message').on('submit', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
+  $(function(){
+    setInterval(update, 5000)
+  });
+
+  function update(){
+    if($('.messages')[0]){
+      var message_id = $('.message:last').data('id')
+    } else {
+      var message_id = 0
+    }
     var href = window.location.href
     $.ajax({
-      type: "POST",
       url: href,
-      data: formData,
+      type: 'GET',
+      data: { id: message_id },
       dataType: 'json',
-      contentType: false,
-      processData: false,
-      disabled: false
     })
-    .done(function(data){
-      console.log(data)
+    .always(function(data){
+      $.each(data, function(i, data){
       var html = buildHTML(data);
-      $('.messages').append(html)
+      $('.messages').append(html);
       $('#new_message')[0].reset();
       $('.main').animate({
         scrollTop: $('.messages')[0].scrollHeight
       })
+      })
     })
-    .fail(function(){
-      alert('メッセージを入力してください');
-    })
-  });
+  }
 });

@@ -20,7 +20,8 @@
           = group.show_last_message
 .main
   .messages
-    = render @messages
+    - @messages.each do |message|
+      = render @messages
 .clear
 .footer
   .form
