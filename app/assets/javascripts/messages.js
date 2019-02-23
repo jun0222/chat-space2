@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log(message);
     if (message.image.url !== null) {
       var html = `<div class="message" data-id="${ message.id }">
                       <a class="upper-message__user-name">${ message.name}</a>
@@ -32,7 +31,6 @@ $(function(){
       disabled: false
     })
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html)
       $('#new_message')[0].reset();
