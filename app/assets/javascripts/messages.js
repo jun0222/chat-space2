@@ -1,13 +1,22 @@
 $(function(){
   function buildHTML(message){
-    var html = `<div class="message">
-                    <a class="upper-message__user-name">${ message.name}</a>
-                    <a class="upper-message__date">${message.time}</a>\n
-                    <p>${message.content}</p>
-                    <img src="${message.image.url}" class="lower-message__image">
-                </div>`
+    if (message.image.url !== null) {
+      var html = `<div class="message" data-id="${ message.id }">
+                      <a class="upper-message__user-name">${ message.name}</a>
+                      <a class="upper-message__date">${message.time}</a>\n
+                      <p>${message.content}</p>
+                      <img src="${message.image.url}" class="lower-message__image">
+                  </div>`
+                  } else {
+      var html = `<div class="message" data-id="${ message.id }">
+                      <a class="upper-message__user-name">${ message.name}</a>
+                      <a class="upper-message__date">${message.time}</a>\n
+                      <p>${message.content}</p>
+                  </div>`
+             }
     return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -34,5 +43,3 @@ $(function(){
     })
   });
 });
-
-
