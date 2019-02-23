@@ -1,11 +1,15 @@
 $(function(){
   function buildHTML(message){
+    var image = ""
+    if (message.image.url !== null) {
+      image = `<img src="${message.image.url}" class="lower-message__image">`
+    }
     if (message.image.url !== null) {
       var html = `<div class="message" data-id="${ message.id }">
                       <a class="upper-message__user-name">${ message.name}</a>
                       <a class="upper-message__date">${message.time}</a>\n
                       <p>${message.content}</p>
-                      <img src="${message.image.url}" class="lower-message__image">
+                      ${ image }
                   </div>`
                   } else {
       var html = `<div class="message" data-id="${ message.id }">
