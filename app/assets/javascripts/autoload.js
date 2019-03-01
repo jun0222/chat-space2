@@ -32,7 +32,6 @@ $(function(){
       $.each(data, function(i, data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('#new_message')[0].reset();
       $('.main').animate({
         scrollTop: $('.messages')[0].scrollHeight
       })
