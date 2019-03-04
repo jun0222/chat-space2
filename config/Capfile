@@ -1,4 +1,3 @@
-
 # Load DSL and set up stages
 # require "capistrano/setup"
 
@@ -47,5 +46,3 @@ require 'capistrano/rails/migrations'
 require 'capistrano3/unicorn'
 
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
-
-Rake::Task[:production].invoke
