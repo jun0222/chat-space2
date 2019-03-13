@@ -1,5 +1,5 @@
-= form_for @search do |f|
-  - if search.errors.any?
+= form_for @group do |f|
+  - if @group.errors.any?
     .chat-group-form__errors
       %h2= "#{search.errors.full_messages.count}件のエラーが発生しました。"
       %ul
@@ -28,6 +28,11 @@
           %input{name: "group[user_ids][]", type: "hidden", value: current_user.id, id: "group_user_ids"}
             %p{class: "chat-group-user__name" ,class: "already-exist-chat-member"}
               = current_user.name
+        - @group.users.each do |user|
+          .chat-group-user.clearfix.js-chat-member.user-delete-line{:id => "chat-group-user-#{ user.id }"}
+            %input{:name => "group[user_ids][]", :type => "hidden", :value => "#{ user.id }"}/
+            %p.chat-group-user__name #{ user.name }
+            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right

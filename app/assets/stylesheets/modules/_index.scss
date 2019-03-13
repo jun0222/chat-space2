@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+}
+
 .hidden {
   display:none
 }
@@ -48,6 +52,13 @@
   border: $AlertColor solid 1px;
   font-size: 20px;
   }
+}
+
+.edit-button a {
+  display: block;
+  color: $AlertColor;
+  margin-left: 15px;
+  margin-top: 5px;
 }
 
   .header .members {
