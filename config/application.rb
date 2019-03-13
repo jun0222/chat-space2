@@ -13,5 +13,7 @@ module ChatSpace2
     # -- all .rb files in that directory are automatically loaded.
     I18n.enforce_available_locales = false
     config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
